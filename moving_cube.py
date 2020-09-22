@@ -1,5 +1,5 @@
 #moving cube by Jura Perić
-#version 1.1
+#version 1.1.1
 
 #modules
 from random import*
@@ -23,7 +23,7 @@ L6=[ground,ground,ground,ground,ground,ground,ground] #5th line
 L7=[border,border,border,border,border,border,border]
 
 #defined commands
-def spawnCube():
+def spawnCharacter():
     if ySpawnC==1:
         L2[xSpawnC]=character
     elif ySpawnC==2:
@@ -49,7 +49,7 @@ def displayScreen():
 
 
 #main execution
-spawnCube()
+spawnCharacter()
 displayScreen()
 while True:
 
@@ -178,3 +178,4 @@ while True:
         L6[xPSpawnC]=ground
         xSpawnC=xSpawnC+1
         displayScreen()
+
