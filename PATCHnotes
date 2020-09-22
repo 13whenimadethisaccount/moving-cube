@@ -1,2 +1,3 @@
-v1.0.1: commented printing commands used to print coordinates
-v1.1: borders, ground and the character have been made modular and are swappable easily
+v1.0.1: commented printing commands used to print coordinates / Jura Perić
+v1.1: borders, ground and the character have been made modular and are swappable easily / Jura Perić
+v1.1.1: renamed the spawnCube() function to spawnCharacter() / Jura Perić
