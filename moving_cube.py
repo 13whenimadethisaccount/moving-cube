@@ -1,5 +1,5 @@
 #moving cube by Jura Perić
-#version 1.1.1
+#version 1.2
 
 #modules
 from random import*
@@ -52,95 +52,94 @@ def displayScreen():
 spawnCharacter()
 displayScreen()
 while True:
+    controller=input("Enter valid controls (wasd): ")
 
-    #input controls
-    controller=input("Enter valid controls (up, down, left, right, wasd): ")
-
-    if xSpawnC == -1:
-        xSpawnC = 6
-    if xSpawnC == 6 and controller == "d":
-        xSpawnC = -1
+    #used to prevent crashing (program crashes if xSpawnC reaches 7 or -7)
+    if xSpawnC==-1:
+        xSpawnC=6
+    if xSpawnC==6 and controller=="d":
+        xSpawnC=-1
 
     #up
-    if controller=="up" or controller=="w" and ySpawnC==1: 
+    if controller=="w" and ySpawnC==1: 
         L6[xSpawnC]=character
         L2[xSpawnC]=ground
         ySpawnC=5
         displayScreen()
-    elif controller=="up" or controller=="w" and ySpawnC==2:
+    elif controller=="w" and ySpawnC==2:
         L2[xSpawnC]=character
         L3[xSpawnC]=ground
         ySpawnC=1
         displayScreen()
-    elif controller=="up" or controller=="w" and ySpawnC==3: 
+    elif controller=="w" and ySpawnC==3: 
         L3[xSpawnC]=character
         L4[xSpawnC]=ground
         ySpawnC=2
         displayScreen()
-    elif controller=="up" or controller=="w" and ySpawnC==4:
+    elif controller=="w" and ySpawnC==4:
         L4[xSpawnC]=character
         L5[xSpawnC]=ground
         ySpawnC=3
         displayScreen()
-    elif controller=="up" or controller=="w" and ySpawnC==5:
+    elif controller=="w" and ySpawnC==5:
         L5[xSpawnC]=character
         L6[xSpawnC]=ground
         ySpawnC=4
         displayScreen()
         
     #down
-    if controller=="down" or controller=="s" and ySpawnC==1: 
+    if controller=="s" and ySpawnC==1: 
         L3[xSpawnC]=character
         L2[xSpawnC]=ground
         ySpawnC=2
         displayScreen()
-    elif controller=="down" or controller=="s" and ySpawnC==2:
+    elif controller=="s" and ySpawnC==2:
         L4[xSpawnC]=character
         L3[xSpawnC]=ground
         ySpawnC=3
         displayScreen()
-    elif controller=="down" or controller=="s" and ySpawnC==3: 
+    elif controller=="s" and ySpawnC==3: 
         L5[xSpawnC]=character
         L4[xSpawnC]=ground
         ySpawnC=4
         displayScreen()
-    elif controller=="down" or controller=="s" and ySpawnC==4:
+    elif controller=="s" and ySpawnC==4:
         L6[xSpawnC]=character
         L5[xSpawnC]=ground
         ySpawnC=5
         displayScreen()
-    elif controller=="down" or controller=="s" and ySpawnC==5:
+    elif controller=="s" and ySpawnC==5:
         L2[xSpawnC]=character
         L6[xSpawnC]=ground
         ySpawnC=1
         displayScreen()
         
     #left
-    if controller=="left" or controller=="a" and ySpawnC==1:
+    if controller=="a" and ySpawnC==1:
         xPSpawnC=xSpawnC
         L2[xSpawnC-1]=character
         L2[xPSpawnC]=ground
         xSpawnC=xSpawnC-1
         displayScreen()
-    if controller=="left" or controller=="a" and ySpawnC==2:
+    if controller=="a" and ySpawnC==2:
         xPSpawnC=xSpawnC
         L3[xSpawnC-1]=character
         L3[xPSpawnC]=ground
         xSpawnC=xSpawnC-1
         displayScreen()
-    if controller=="left" or controller=="a" and ySpawnC==3:
+    if controller=="a" and ySpawnC==3:
         xPSpawnC=xSpawnC
         L4[xSpawnC-1]=character
         L4[xPSpawnC]=ground
         xSpawnC=xSpawnC-1
         displayScreen()
-    if controller=="left" or controller=="a" and ySpawnC==4:
+    if controller=="a" and ySpawnC==4:
         xPSpawnC=xSpawnC
         L5[xSpawnC-1]=character
         L5[xPSpawnC]=ground
         xSpawnC=xSpawnC-1
         displayScreen()
-    if controller=="left" or controller=="a" and ySpawnC==5:
+    if controller=="a" and ySpawnC==5:
         xPSpawnC=xSpawnC
         L6[xSpawnC-1]=character
         L6[xPSpawnC]=ground
@@ -148,34 +147,33 @@ while True:
         displayScreen()
 
     #right
-    if controller=="right" or controller=="d" and ySpawnC==1:
+    if controller=="d" and ySpawnC==1:
         xPSpawnC=xSpawnC
         L2[xSpawnC+1]=character
         L2[xPSpawnC]=ground
         xSpawnC=xSpawnC+1
         displayScreen()
-    if controller=="right" or controller=="d" and ySpawnC==2:
+    if controller=="d" and ySpawnC==2:
         xPSpawnC=xSpawnC
         L3[xSpawnC+1]=character
         L3[xPSpawnC]=ground
         xSpawnC=xSpawnC+1
         displayScreen()
-    if controller=="right" or controller=="d" and ySpawnC==3:
+    if controller=="d" and ySpawnC==3:
         xPSpawnC=xSpawnC
         L4[xSpawnC+1]=character
         L4[xPSpawnC]=ground
         xSpawnC=xSpawnC+1
         displayScreen()
-    if controller=="right" or controller=="d" and ySpawnC==4:
+    if controller=="d" and ySpawnC==4:
         xPSpawnC=xSpawnC
         L5[xSpawnC+1]=character
         L5[xPSpawnC]=ground
         xSpawnC=xSpawnC+1
         displayScreen()
-    if controller=="right" or controller=="d" and ySpawnC==5:
+    if controller=="d" and ySpawnC==5:
         xPSpawnC=xSpawnC
         L6[xSpawnC+1]=character
         L6[xPSpawnC]=ground
         xSpawnC=xSpawnC+1
         displayScreen()
-
